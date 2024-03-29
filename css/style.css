@@ -1,0 +1,187 @@
+/* Grundläggande reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+  }
+  
+
+  
+  body {
+    
+    background-image: url('/images/background.webp'); /* Anpassa sökvägen till din bakgrundsbild */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    padding-bottom: 50px; /* Gör plats för footern */
+}
+  
+  header {
+    position: relative;
+    height: 30vh;
+    background-image: url('/images/headerImg.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 60px; /* Lägg till padding för att ge plats åt navbaren */
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+  }
+  .header-inner h1 {
+    font-family: 'Merriweather', serif; /* Använd den valda Google Font */
+    font-size: 3em;
+    color: #fdf6e3;
+    margin-top: 0;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Lägg till en svart bakgrundsfärg */
+    border-radius: 30px; /* Runda hörn för en mjukare look */
+    display: inline-block; /* Så att bakgrundsfärgen anpassar sig efter textens storlek */
+    padding: 10px 20px; /* Lägg till lite utrymme runt texten */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+  
+  nav.main-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(34, 17, 0, 0.8); /* Gör bakgrunden lite transparent */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  nav.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  nav.main-nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav.main-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav.main-nav ul li a:hover,
+  nav.main-nav ul li a.active {
+    background-color: #fdf6e3; /* Ändra till vit färg för att matcha section */
+    color: #221100; /* Textfärgen ändras för bättre kontrast */
+    border-radius: 5px;
+    border-bottom: none;
+    box-shadow: none;
+    
+  }
+  
+  h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    color: #fdf6e3;
+    margin-top: 0;
+    padding: 20px 0;
+  }
+  
+  /* Stilar för sektioner och innehåll */
+  .profile-section{
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color:rgb(255, 228, 196, 0.2);
+    border-radius: 10px; /* Rundade hörn */
+  }
+  
+  .profile-section h2 {
+    margin-top: 4rem;
+    margin-bottom: 2rem; /* Lägger till utrymme under rubriken */
+    text-align: center; /* Centrerar rubriken */
+}
+
+.songs-container {
+    display: flex;
+    flex-direction: column; /* Stackar element vertikalt */
+    align-items: center; /* Centrerar innehållet horisontellt */
+    margin: 2rem 0; /* Lägger till marginal ovanför och under låtlistan */
+}
+
+.songs {
+    display: flex;
+    flex-wrap: wrap; /* Tillåter låtarna att rada upp sig på flera rader om nödvändigt */
+    justify-content: center; /* Centrerar låtarna */
+    gap: 2rem; /* Skapar utrymme mellan varje låt */
+}
+
+.songs iframe {
+  border-radius: 12px; /* Ger rundade hörn */
+  border: 2px solid var(--color); /* Lägger till en kant med din temafärg */
+  width: calc(50% - 1rem); /* Justering av bredden med hänsyn till utrymme mellan iframes */
+  min-width: 300px; /* Sätter en minsta bredd */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lägger till en mjuk skugga för djup */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Gör övergångar mjukare */
+}
+
+.songs iframe:hover {
+  transform: scale(1.05); /* Förstorar lite vid hover för att ge feedback */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Starkare skugga vid hover */
+}
+
+  
+  
+  
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #221100; /* Mörkbrun färg för footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  @media (max-width: 768px) {
+    .header-inner h1 {
+        font-size: 2em; /* Mindre textstorlek för mobilvy */
+        padding: 10px; /* Mindre padding för en kompaktare look */
+    }
+
+    nav.main-nav ul li a {
+        padding: 5px 10px; /* Minskad padding för länkarna */
+        font-size: 16px; /* Mindre textstorlek för länkarna */
+    }
+
+    .main-nav {
+        padding: 5px 0; /* Minskad padding för hela navigeringsbaren */
+    }
+    .songs iframe {
+      width: 100%; /* Låtarna tar full bredd på mindre skärmar */
+      min-width: 0; /* Återställer minsta bredden */
+  }
+
+    /* Tillval: Justera layouten för sektionerna */
+    .profile-section, .music-section {
+        padding: 15px; /* Mindre padding inuti sektionerna */
+    }
+
+    footer {
+        padding: 5px 0; /* Mindre padding för footern */
+    }
+}
